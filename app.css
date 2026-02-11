@@ -33,6 +33,10 @@ header {
     }
 }
 
+footer {
+    margin-bottom: 2rem;
+}
+
 nav {
     display: flex;
     justify-content: space-between;
@@ -93,11 +97,13 @@ nav div {
 main {
     display: flex;
     flex-direction: column;
+    margin-bottom: 5rem;
 
     @media (min-width: 992px) {
         width: 80%;
         flex-direction: row;
         justify-content: center;
+        align-items: center;
         margin-top: 5rem;
     }
 }
@@ -213,6 +219,7 @@ p {
 
     @media (min-width: 992px) {
         flex-direction: column;
+        margin-bottom: 2rem;
     }
 }
 
@@ -296,7 +303,7 @@ button svg {
 /* Las fotos previas solo se muestran en pantallas grandes */
 #thumbnails {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 
     @media (max-width: 992px) {
         display: none;
@@ -322,7 +329,7 @@ button svg {
     line-height: 0;
 
     padding: 0;
-    width: 15%;
+    width: 18%;
     border: none;
     background-color: transparent;
 }
