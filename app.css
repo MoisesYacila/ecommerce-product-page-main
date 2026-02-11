@@ -23,6 +23,7 @@ button {
     cursor: pointer;
 }
 
+/* NAV BAR */
 /* En dispositivos más grandes centramos el contenido (en este caso solo hay una nav) al centro */
 /* Como necesitamos que abarque horizontalmente el máximo espacio que tengamos, podemos usar align-self: stretch */
 header {
@@ -31,10 +32,6 @@ header {
         justify-content: center;
         align-self: stretch;
     }
-}
-
-footer {
-    margin-bottom: 2rem;
 }
 
 nav {
@@ -53,6 +50,29 @@ nav {
         flex-wrap: nowrap;
         align-items: center;
     }
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+
+    @media (min-width: 992px) {
+        width: 150px;
+        margin-right: 2rem;
+    }
+}
+
+#pfp {
+    @media (min-width: 992px) {
+        margin-left: 2rem;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.nav-profile {
+    display: flex;
+    align-items: center;
 }
 
 nav a {
@@ -93,6 +113,10 @@ nav div {
     color: black;
 }
 
+/* FINAL DE NAV BAR */
+
+
+/* CONTENIDO PRINCIPAL */
 /* El contenido principal lo mostramos en columna en dispositivos pequeños y en modo fila en dispositivos más grandes */
 main {
     display: flex;
@@ -108,16 +132,7 @@ main {
     }
 }
 
-.logo {
-    width: 100px;
-    height: auto;
-
-    @media (min-width: 992px) {
-        width: 150px;
-        margin-right: 2rem;
-    }
-}
-
+/* SECCION DE FOTOS */
 #main-picture-container {
     /* Vamos a usar un div con una imagen de fondo para poder poner los botones de cambiar de foto en dispositivos pequeños */
     /* bg-size cover para que la imagen no se repita, pero tenemos que ir ajustando la altura dependiendo del tamaño de la pantalla */
@@ -189,6 +204,51 @@ main {
     }
 }
 
+/* Las fotos previas solo se muestran en pantallas grandes */
+#thumbnails {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 992px) {
+        display: none;
+    }
+}
+
+/* Que las imagenes ocupen el 100% del espacio de cada botón */
+#thumbnails button img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* En este caso estamos hardcodeando esto, luego lo podemos cambiar con JS para que la imagen activa tenga esta opacidad*/
+#thumbnails button:first-child img {
+    filter: opacity(0.3);
+}
+
+/* Que el botón y la imagen tengan el mismo border-radius para que se vea bien el borde */
+#thumbnails button {
+    border-radius: 10px;
+
+    /* Elimina un pequeño gap debajo de la imagen */
+    line-height: 0;
+
+    padding: 0;
+    width: 18%;
+    border: none;
+    background-color: transparent;
+}
+
+/* También hardcodeado y se puede cambiar con JS */
+#thumbnails button:first-child {
+    /* Ponemos el borde aquí para que la opacidad de la imagen no afecte al borde */
+    border: 3px solid #ff7d1a;
+}
+
+/* FIN SECCION DE FOTOS */
+
+
+
+/* SECCION DE INFORMACION DEL PRODUCTO */
 .product-description {
     margin: 1rem 2rem;
 
@@ -300,56 +360,9 @@ button svg {
     margin-right: 1rem;
 }
 
-/* Las fotos previas solo se muestran en pantallas grandes */
-#thumbnails {
-    display: flex;
-    justify-content: space-between;
+/* FIN SECCION DE INFORMACION DEL PRODUCTO */
+/* FIN DE CONTENIDO PRINCIPAL */
 
-    @media (max-width: 992px) {
-        display: none;
-    }
-}
-
-/* Que las imagenes ocupen el 100% del espacio de cada botón */
-#thumbnails button img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-/* En este caso estamos hardcodeando esto, luego lo podemos cambiar con JS para que la imagen activa tenga esta opacidad*/
-#thumbnails button:first-child img {
-    filter: opacity(0.3);
-}
-
-/* Que el botón y la imagen tengan el mismo border-radius para que se vea bien el borde */
-#thumbnails button {
-    border-radius: 10px;
-
-    /* Elimina un pequeño gap debajo de la imagen */
-    line-height: 0;
-
-    padding: 0;
-    width: 18%;
-    border: none;
-    background-color: transparent;
-}
-
-/* También hardcodeado y se puede cambiar con JS */
-#thumbnails button:first-child {
-    /* Ponemos el borde aquí para que la opacidad de la imagen no afecte al borde */
-    border: 3px solid #ff7d1a;
-}
-
-
-#pfp {
-    @media (min-width: 992px) {
-        margin-left: 2rem;
-        width: 40px;
-        height: 40px;
-    }
-}
-
-.nav-profile {
-    display: flex;
-    align-items: center;
+footer {
+    margin-bottom: 2rem;
 }
