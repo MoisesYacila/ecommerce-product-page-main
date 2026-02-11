@@ -31,22 +31,26 @@
   <!-- nav bar de arriba -->
   <header>
     <nav>
-      <div>
+      <!-- En dispositivos móviles se verán estos elementos -->
+      <div class="nav-mobile">
         <a href="#"><img src="images/icon-menu.svg" alt="cart"></a>
-        <a href="#top"><img src="images/logo.svg" id="logo" alt="logo"></a>
+        <a href="#top"><img src="images/logo.svg" class="logo" alt="logo"></a>
       </div>
-      <div>
+      <!-- En pantallas más grandes, se verá esto -->
+      <div class="nav-desktop">
+        <a href="#top"><img src="images/logo.svg" class="logo" alt="logo"></a>
+        <a href="#">Collections</a>
+        <a href="#">Men</a>
+        <a href="#">Women</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <!-- Esto se verá independientemente del tamaño de la pantalla -->
+      <div class="nav-profile">
         <a href="#" class="nav-links"><img src="images/icon-cart.svg" alt="cart"></a>
-        <a href="#" class="nav-links"><img src="images/image-avatar.png" alt="profile picture"></a>
+        <a href="#" class="nav-links"><img src="images/image-avatar.png" alt="profile picture" id="pfp"></a>
       </div>
-
-
-
-      <!-- <a href="#">Collections</a>
-      <a href="#">Men</a>
-      <a href="#">Women</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a> -->
     </nav>
   </header>
   <main>

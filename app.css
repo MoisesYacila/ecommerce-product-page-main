@@ -10,10 +10,27 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Kumbh Sans', sans-serif;
+
+    /* En pantallas más grandes, hacemos el body flex para colocar los contenidos de la página donde queremos más facilmente */
+    @media (min-width: 992px) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 
 button {
     cursor: pointer;
+}
+
+/* En dispositivos más grandes centramos el contenido (en este caso solo hay una nav) al centro */
+/* Como necesitamos que abarque horizontalmente el máximo espacio que tengamos, podemos usar align-self: stretch */
+header {
+    @media (min-width: 992px) {
+        display: flex;
+        justify-content: center;
+        align-self: stretch;
+    }
 }
 
 nav {
@@ -23,6 +40,15 @@ nav {
     flex-wrap: wrap;
     gap: 10px;
     margin: 1rem 0;
+
+    /* En pantallas más pequeñas hacemos algunos ajustes a la nav bar para que se vea como en el ejemplo */
+    @media (min-width: 992px) {
+        border-bottom: 1px solid #b6bcc8;
+        padding-bottom: 3rem;
+        width: 80%;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
 }
 
 nav a {
@@ -35,21 +61,51 @@ nav img {
     cursor: pointer;
 }
 
+nav div {
+    @media (min-width: 992px) {
+        display: flex;
+    }
+}
+
+/* Solo vamos a mostrar uno de estos dos elementos dependiendo del tamaño de la pantalla */
+.nav-mobile {
+    @media (min-width: 992px) {
+        display: none;
+    }
+}
+
+.nav-desktop {
+    @media (max-width: 992px) {
+        display: none;
+    }
+}
+
+.nav-desktop a {
+    text-decoration: none;
+    color: #68707d;
+}
+
 /* El contenido principal lo mostramos en columna en dispositivos pequeños y en modo fila en dispositivos más grandes */
 main {
     display: flex;
     flex-direction: column;
 
     @media (min-width: 992px) {
+        width: 80%;
         flex-direction: row;
         justify-content: center;
         margin-top: 5rem;
     }
 }
 
-#logo {
+.logo {
     width: 100px;
     height: auto;
+
+    @media (min-width: 992px) {
+        width: 150px;
+        margin-right: 2rem;
+    }
 }
 
 #main-picture-container {
@@ -236,9 +292,15 @@ button svg {
     border-radius: 10px;
 }
 
-/* .nav-links {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    margin: 0 10px;
-} */
+#pfp {
+    @media (min-width: 992px) {
+        margin-left: 2rem;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.nav-profile {
+    display: flex;
+    align-items: center;
+}
