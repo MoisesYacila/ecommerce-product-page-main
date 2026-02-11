@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght,YOPQ@100..900,300&display=swap" rel="stylesheet">
 
-  <title>Frontend Mentor | E-commerce product page</title>
+  <title>Sneakers</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
@@ -28,6 +28,7 @@
 </head>
 
 <body>
+  <!-- nav bar de arriba -->
   <header>
     <nav>
       <div>
@@ -41,8 +42,7 @@
 
 
 
-      <!--
-      <a href="#">Collections</a>
+      <!-- <a href="#">Collections</a>
       <a href="#">Men</a>
       <a href="#">Women</a>
       <a href="#">About</a>
@@ -50,8 +50,10 @@
     </nav>
   </header>
   <main>
+    <!-- Imagenes del producto -->
     <section class="product-images">
       <div id="main-picture-container">
+        <!-- button con img dentro funcionó mejor que una imagen como backgound del botón -->
         <button id="prev-button" class="slider-button">
           <img src="images/icon-previous.svg" alt="previous button">
         </button>
@@ -60,6 +62,7 @@
         </button>
       </div>
 
+      <!-- Imagenes previas de producto que se enseñan en pantallas medianas y más grandes -->
       <div id="thumbnails">
         <img src="images/image-product-1-thumbnail.jpg" alt="Sneakers thumbnail 1">
         <img src="images/image-product-2-thumbnail.jpg" alt="Sneakers thumbnail 2">
@@ -67,6 +70,7 @@
         <img src="images/image-product-4-thumbnail.jpg" alt="Sneakers thumbnail 4">
       </div>
     </section>
+    <!-- Descripción del producto -->
     <section class="product-description">
       <strong class="company-name">SNEAKER COMPANY</strong>
 
@@ -83,6 +87,7 @@
         <span class="original-price">$250.00</span>
       </section>
 
+      <!-- Sección para selección de cantidad y añadir al carrito -->
       <section class="add-to-cart-section">
         <div class="amount-selector">
           <button class="amount-button"><img src="images/icon-minus.svg" alt="minus icon"></button>
@@ -90,6 +95,8 @@
           <button class="amount-button"><img src="images/icon-plus.svg" alt="plus icon"></button>
         </div>
 
+        <!-- svg corresponde al icono que se usa para el carrito
+         usar un elemento <svg> nos ayuda a poder cambiar el color más facilmente con CSS o usando el atributo fill -->
         <button id="add-to-cart-button"><svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
             <path
               d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"

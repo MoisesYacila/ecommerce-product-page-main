@@ -1,9 +1,9 @@
-/* Common breakpoints for responsive design
-xs: < 576px, Portrait Phones
-sm: < 768px, Landscape Phones
+/* Breakpoints comunes para diseño responsivo
+xs: < 576px, Moviles en vertical
+sm: < 768px, Moviles en horizontal
 md: < 992px, Tablets (iPads)
-lg: < 1200px, Laptops / Small Desktops
-xl: < 1400px, Large Desktop Monitors
+lg: < 1200px, Portatiles y monitores de sobremesa pequeños
+xl: < 1400px, Monitores de sobremesa grandes
  */
 
 body {
@@ -19,6 +19,7 @@ button {
 nav {
     display: flex;
     justify-content: space-between;
+    /* Wrap y gap ayudan con pantallas muy pequeñas a que el contenido se vea mejor */
     flex-wrap: wrap;
     gap: 10px;
     margin: 1rem 0;
@@ -34,6 +35,7 @@ nav img {
     cursor: pointer;
 }
 
+/* El contenido principal lo mostramos en columna en dispositivos pequeños y en modo fila en dispositivos más grandes */
 main {
     display: flex;
     flex-direction: column;
@@ -51,6 +53,8 @@ main {
 }
 
 #main-picture-container {
+    /* Vamos a usar un div con una imagen de fondo para poder poner los botones de cambiar de foto en dispositivos pequeños */
+    /* bg-size cover para que la imagen no se repita, pero tenemos que ir ajustando la altura dependiendo del tamaño de la pantalla */
     background-image: url('images/image-product-1.jpg');
     background-size: cover;
     width: 100%;
@@ -76,6 +80,7 @@ main {
 }
 
 .slider-button {
+    /* hacerlo flex y centrar todo ayudó a que la imagen esté centrada en el botón */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,11 +88,13 @@ main {
     background-size: auto;
     background-repeat: no-repeat;
     border-radius: 50%;
+    /* círculo */
     border: none;
     height: 50px;
     width: 50px;
     cursor: pointer;
 
+    /* En pantallas grandes no mostramos estos botones */
     @media (min-width: 992px) {
         display: none;
     }
@@ -165,15 +172,12 @@ p {
 .amount-selector {
     display: flex;
     justify-content: space-between;
-    /* align-items: center; */
     background-color: #f7f8fd;
-    /* background-color: #1d2025; */
     padding: 1rem;
     border-radius: 10px;
 
     @media (min-width: 992px) {
-        width: 50%;
-        height: 100%;
+        width: 30%;
     }
 }
 
@@ -190,14 +194,16 @@ p {
 .add-to-cart-section {
     @media (min-width: 992px) {
         display: flex;
+        justify-content: space-between;
         align-items: center;
     }
 }
 
 #add-to-cart-button {
     display: flex;
+    justify-content: center;
     padding: 1rem 0;
-    margin: 1rem 0;
+    margin-top: 1rem;
     margin-bottom: 5rem;
     width: 100%;
     border: none;
@@ -206,9 +212,8 @@ p {
     font-weight: 700;
 
     @media (min-width: 992px) {
-        width: 50%;
-        height: 100%;
-        margin-bottom: 0;
+        width: 60%;
+        margin: 0;
     }
 }
 
@@ -216,6 +221,7 @@ button svg {
     margin-right: 1rem;
 }
 
+/* Las fotos previas solo se muestran en pantallas grandes */
 #thumbnails {
     display: flex;
     justify-content: space-evenly;
