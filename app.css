@@ -85,6 +85,10 @@ nav div {
     color: #68707d;
 }
 
+.nav-desktop a:hover {
+    color: black;
+}
+
 /* El contenido principal lo mostramos en columna en dispositivos pequeños y en modo fila en dispositivos más grandes */
 main {
     display: flex;
@@ -130,8 +134,16 @@ main {
     @media (min-width: 992px) {
         margin-bottom: 2rem;
         border-radius: 10px;
-        height: 400px;
+        height: 300px;
         width: auto;
+    }
+
+    @media (min-width: 1200px) {
+        height: 400px;
+    }
+
+    @media (min-width: 1400px) {
+        height: 500px;
     }
 }
 
@@ -273,6 +285,10 @@ p {
     }
 }
 
+#add-to-cart-button:hover {
+    background-color: #ff9442;
+}
+
 button svg {
     margin-right: 1rem;
 }
@@ -287,10 +303,36 @@ button svg {
     }
 }
 
-#thumbnails img {
-    width: 15%;
+/* Que las imagenes ocupen el 100% del espacio de cada botón */
+#thumbnails button img {
+    width: 100%;
     border-radius: 10px;
 }
+
+/* En este caso estamos hardcodeando esto, luego lo podemos cambiar con JS para que la imagen activa tenga esta opacidad*/
+#thumbnails button:first-child img {
+    filter: opacity(0.3);
+}
+
+/* Que el botón y la imagen tengan el mismo border-radius para que se vea bien el borde */
+#thumbnails button {
+    border-radius: 10px;
+
+    /* Elimina un pequeño gap debajo de la imagen */
+    line-height: 0;
+
+    padding: 0;
+    width: 15%;
+    border: none;
+    background-color: transparent;
+}
+
+/* También hardcodeado y se puede cambiar con JS */
+#thumbnails button:first-child {
+    /* Ponemos el borde aquí para que la opacidad de la imagen no afecte al borde */
+    border: 3px solid #ff7d1a;
+}
+
 
 #pfp {
     @media (min-width: 992px) {
